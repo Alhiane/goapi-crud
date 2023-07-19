@@ -1,6 +1,8 @@
 package routes
 
 import (
+	"net/http"
+
 	"github.com/Alhiane/goapi-crud/pkg/controllers"
 	"github.com/gorilla/mux"
 )
@@ -8,6 +10,8 @@ import (
 func SetupRoutes() *mux.Router {
 	// ...
 	router := mux.NewRouter()
+
+	http.Handle("/", router)
 
 	router.HandleFunc("/api/books/", controllers.GetNotes).Methods("GET")
 	router.HandleFunc("/api/books/", controllers.GetNotes).Methods("POST")
