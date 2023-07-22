@@ -13,11 +13,11 @@ func SetupRoutes() *mux.Router {
 
 	http.Handle("/", router)
 
-	router.HandleFunc("/api/books/", controllers.GetNotes).Methods("GET")
-	router.HandleFunc("/api/books/", controllers.GetNotes).Methods("POST")
-	router.HandleFunc("/api/books/{id}", controllers.GetNote).Methods("GET")
-	router.HandleFunc("/api/books/{id}", controllers.GetNote).Methods("PUT")
-	router.HandleFunc("/api/books/{id}", controllers.GetNote).Methods("DELETE")
+	router.HandleFunc("/api/books/", controllers.GetBooks).Methods("GET")
+	router.HandleFunc("/api/books/", controllers.GetBooks).Methods("POST")
+	router.HandleFunc("/api/books/{id}", controllers.GetBook).Methods("GET")
+	router.HandleFunc("/api/books/{id}", controllers.GetBook).Methods("PUT")
+	router.HandleFunc("/api/books/{id}", controllers.GetBook).Methods("DELETE")
 
 	return router
 }

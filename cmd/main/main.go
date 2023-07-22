@@ -7,7 +7,6 @@ import (
 )
 
 func main() {
-
 	routes.SetupRoutes()
 
 	err := http.ListenAndServe(":9090", nil)
